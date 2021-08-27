@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import { Repairs } from "./components/Repairs"  //5.  import our component 
 import reportWebVitals from './reportWebVitals';
 
+//6.  the <Repairs /> line is us calling the function. In jxs, the call looks kind of like an html tag.
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Repairs />  
   </React.StrictMode>,
   document.getElementById('root')
 );
