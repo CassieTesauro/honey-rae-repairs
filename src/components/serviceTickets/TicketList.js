@@ -5,7 +5,7 @@ export const TicketList = () => {
 
     useEffect(
         () => {
-            fetch("http://localhost:8088/http://localhost:8088/serviceTickets?_expand=employee&_expand=customer")
+            fetch("http://localhost:8088/serviceTickets?_expand=employee&_expand=customer")
                 .then(res => res.json())
                 .then((serviceTicketsFromAPI) => {
                     updateTickets(serviceTicketsFromAPI)
