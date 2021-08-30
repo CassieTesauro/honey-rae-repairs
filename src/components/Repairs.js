@@ -1,6 +1,7 @@
 import React from "react" //1.  Allows us to use React library features
-import { CustomerList } from "./customers/CustomerList"
-import { EmployeeList } from "./employees/EmployeeList"
+import { CustomerList } from "./customers/CustomerList";
+import { EmployeeList } from "./employees/EmployeeList";
+import { TicketList } from "./serviceTickets/TicketList";
     
 
 //Module Responsibilities: Define component/function Repairs, which will determine layout and order other components appear on the site.
@@ -16,6 +17,9 @@ export const Repairs = () => { //2.  Whatever this function returns will be the 
 
                 <h2>Employee List</h2>
                 <EmployeeList />  
+
+                <h2>Service Tickets</h2>
+                <TicketList />  
             </> //  In React, we can only return 1 jsx element.  So we wrap our h1 and h2's in a "fragment" of <> and </>.
                 //The "<CustomerList /> " is what a function call looks like. Go to customerlist.js to see how that state is fetched from API, stored locally, maped, and rendered.
   )
