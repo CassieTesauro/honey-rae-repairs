@@ -1,7 +1,9 @@
 import React from "react" //1.  Allows us to use React library features
 import { CustomerList } from "./customers/CustomerList";
 import { EmployeeList } from "./employees/EmployeeList";
+import { NavBar } from "./nav/NavBar";
 import { TicketList } from "./serviceTickets/TicketList";
+
     
 
 //Module Responsibilities: Define component/function Repairs, which will determine layout and order other components appear on the site.
@@ -10,6 +12,7 @@ import { TicketList } from "./serviceTickets/TicketList";
 export const Repairs = () => { //2.  Whatever this function returns will be the html that gets generated in the browser. In React components, the html-ish code is called jsx.  It has some differences from html.  React takes the jsx, converts it to js, then renders the html from the js.
         return(  //3.  If you want to generate html from in a React component,  you need a return.  The html goes inside the return parentheses.
             <>
+                <NavBar />
                 <h1>Honey Rae's Repair Shop</h1>  
                 
                 <h2>Customer List</h2>

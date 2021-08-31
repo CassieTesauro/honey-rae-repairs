@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react" //1.  Allows us to use React 
     
 
 
-export const CustomerList = () => { //2.  Whatever this function returns will be the html that gets generated in the browser. In React components, the html-ish code is called jsx.  It has some differences from html.  React takes the jsx, converts it to js, then renders the html from the js.
+export const CustomerList = () => { //2.  Whatever this function returns will be the html that gets generated in the browser. 
    
     const [customers, setCustomers] = useState([])  //4. We need a place to store fetched API data.  We don't make dataAcces.js and an object to store state arrays.  Instead, make a hook "useState()".  Pass the initial value of database.customers, an empty array, into the hook as an argument.  Whenever we invoke the useState hook, it will return the initial value of the database.customers state, aka an empty array, and a function to set the value of database.customers later on.  We capture that intial value and the setter function in the left side of the expression in a variable and function name.  We name them whatever we want.  Here, customers is the state variable and setCustomers is the function name.  Remember: we call customers a "state variable"
     const [totalCustomerAmountMessage, updateTotalCustomerMessage] = useState("")  //17.  We want to display a message with total customer count.  This line sets up out local storage.  
