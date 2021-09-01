@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom" //import Link function from the react-router-dom library so we can use the Link component in our code.  The Link component has one job: generate anchor tags.  <Link> is like <a>.  The to= attribute is like href=.
+import { Link } from "react-router-dom" //import Link function from the react-router-dom library so we can use the Link component in our code.  
 //import "./NavBar.css"
 export const NavBar = () => {
     return(
@@ -14,4 +14,7 @@ export const NavBar = () => {
     )
 }
 
-//Once you render the navbar links, you can inspect them in devtools by clicking inspect and clicking the link in the UI.  The html should pop up in the devtools window.  You can see the anchor <a> tag and the href attribute.
+//NOTES ABOUT LINKS
+//The Link component has one job: generate anchor tags.  <Link> is like <a>.  The to= attribute is like href=.
+//You can inspect links in devtools: click inspect and click the link in the UI.  The html should pop up in the devtools window.  You can see the anchor <a> tag and the href attribute.
+//When you click the link like a user would, the url in the browser's url address bar changes to have /linkname at the end.
