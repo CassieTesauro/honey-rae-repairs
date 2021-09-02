@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react" //"use__ hooks" are built-in functions in react
+import { useHistory } from "react-router-dom"
     
 
 
 export const EmployeeList = () => { 
    
     const [employees, changeEmployee] = useState([])  //const [stateVariable, functionToBeUsedOnTheStateVariable] = useStateHook(variable's intitial value aka initial state 'change' 
+
+    const history = useHistory()
     
     const [specialties, setSpecial] = useState([])
 
