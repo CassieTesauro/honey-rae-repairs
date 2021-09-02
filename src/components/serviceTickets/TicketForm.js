@@ -30,8 +30,8 @@ export const TicketForm = () => {  //NEW COMPONENT DEFINITION
     }
 
     //17.  Component step 5: befire we can make a fetch call  to post the new ticket object to the API, we have to specify the fetch options necessary for the post.
-    const fetchOption = {  //18.  Specify the fetch as an object.  
-        method: "POST"  //19.   Specify fetch ethod as POST.
+    const fetchOptions = {  //18.  Specify the fetch as an object.  
+        method: "POST", //19.   Specify fetch ethod as POST.
         headers: { //20.  Must include headers or the json server won't work correclty
             "Content-Type": "application/json"
         },
@@ -40,15 +40,12 @@ export const TicketForm = () => {  //NEW COMPONENT DEFINITION
 
     //22. Component step 6:  Do the fetch call.  Include the fetchOptions that you specified.
     
-    return fetch("http:localhost8088/serviceTickets", fetchOptions)
-        .then(() => {  //23.  once the fetch is complete, we want to send the user back to the service tickets view so they can see the new ticket is listed.  We can do that by programming the browser url to change upon fetch post complettion using a "useHistory()" mechanism that we get access to from the react-router-dom. We need to import the mechanism at the top ofthe module. 
+   return fetch("http://localhost:8088/serviceTickets", fetchOptions)  
+    .then(() => {  //23.  once the fetch is complete, we want to send the user back to the service tickets view so they can see the new ticket is listed.  We can do that by programming the browser url to change upon fetch post complettion using a "useHistory()" mechanism that we get access to from the react-router-dom. We need to import the mechanism at the top ofthe module. 
           history.push("/tickets") //26.  push our browser history to the ./tickets url, which will take the user to tickets view. 
         })
     }
 
-    const saveTicket = (event) => {
-        event.preventDefault()
-    }
 
     return (
         <form className="ticketForm">
@@ -57,18 +54,18 @@ export const TicketForm = () => {  //NEW COMPONENT DEFINITION
                 <div className="form-group">
                     <label htmlFor="description">Description:</label> 
                     <input
-                    omChange={ //2.  Component step 2:  make an event listener to listen for the change of a user typing a description and update the description state.
+                    onChange={ //2.  Component step 2:  make an event listener to listen for the change of a user typing a description and update the description state.
                         (evt) => { //3.  (evt) parameter captures the event, which will be passed to us an argument by the browser
                            const copy = {...ticket} //4.  we can't directly modify state in here with react, but we can copy the state and modufy that copy.  So, we make a copy of our existing state that's being stored in the variable 'ticket'.  Now the variable 'copy' contains a new object that has a copy of the state.
                            copy.description = evt.target.value //5.  We modify the value of the copy's description value to be whatever the user types.
                            updateTicket(copy)//6.  Now that we modified the copy, we take the copy and make it the new state by using our copy in the function we made [the function to let us modify the ticket state] in step one.
 
-                    }
+                    }}
                         required autoFocus
                         type="text"
                         className="form-control"
                         placeholder="Brief description of problem"
-                        onChange={} />
+                       /> 
                 </div>
             </fieldset>
             <fieldset>
