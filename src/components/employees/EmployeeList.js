@@ -13,7 +13,7 @@ export const EmployeeList = () => {
             fetch("http://localhost:8088/employees") 
                 .then(res => res.json())  
                 .then((fetchedAPIEmployeeArray) => {   
-                    changeEmployee(fetchedAPIEmployeeArray)  
+                    changeEmployee(fetchedAPIEmployeeArray)  //invoking here triggers the use effect on line 22
                 })  
         },
         []
@@ -26,7 +26,7 @@ export const EmployeeList = () => {
             setSpecial(justSpecialties.join(", "))
         }, 
     
-        [employees]
+        [employees]  //works with changeEmployee function at the top
      )
 
     return(  //html must be in a return in react.  Everything in one fragment so we're technically only returning 1 thing.

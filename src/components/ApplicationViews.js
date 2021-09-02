@@ -2,6 +2,7 @@ import React from "react"
 import { Route } from "react-router-dom"
 import { CustomerList } from "./customers/CustomerList"
 import { EmployeeList } from "./employees/EmployeeList"
+import { TicketForm } from "./serviceTickets/TicketForm"
 import { TicketList } from "./serviceTickets/TicketList"
 
 //Module Responsibility: PaDetermine which view of the app should be rendered depending on what the url in the browser is
@@ -17,8 +18,12 @@ export const ApplicationViews = () => {
                 <EmployeeList />
             </Route>
 
-            <Route path="/tickets">
+            <Route exact path="/tickets"> 
                 <TicketList />
+            </Route>
+
+            <Route path="/tickets/create">
+                <TicketForm />
             </Route>
         </>
     )
@@ -33,3 +38,5 @@ export const ApplicationViews = () => {
 //ApplicationViews.js evaluates all the possible routes and looks for a match -->
 // when a browser url / <Route> path attribute match is found-->
 //the function is unvoked to display the correct component
+
+//The route path listener for tickets will run whenever the path for ticketform runs, so to avoid the accidental double match that renders both mathes at once, we make the path for tickets an 'exact path'.
