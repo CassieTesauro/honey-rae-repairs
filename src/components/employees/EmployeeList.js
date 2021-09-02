@@ -31,6 +31,9 @@ export const EmployeeList = () => {
 
     return(  //html must be in a return in react.  Everything in one fragment so we're technically only returning 1 thing.
       <>
+         <div>
+            <button onClick={() => history.push("/employees/create")}>Hire Employee</button>
+        </div>
              <div>
                 Specialties: { specialties }
             </div>
