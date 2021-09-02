@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
 
-//Track transient state
+
 export const EmployeeForm = () => {
 
-    const [employee, updateEmployee] = useState({
+    const [employee, updateEmployee] = useState({ 
         name: "",
         specialty: ""
     });
@@ -12,12 +12,11 @@ export const EmployeeForm = () => {
     const history = useHistory()
 
     const finishHiring = (evt) => {
-        evt.preventDefault()
+        evt.preventDefault()  // ??????
 
-        const newEmployee = {
+        const newEmployee = { 
             name: employee.name,
             specialty: employee.specialty
-            //employeeId: ????
         }
 
         const fetchOptions = {
