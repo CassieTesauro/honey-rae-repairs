@@ -41,3 +41,6 @@ export const TicketList = () => {
     )
 
 }
+
+//HYPERLINK NOTE
+//In the return, we turned the interpolated ticket description text into a hyperlink that can be clicked on by adding link tag  ---> <Link to={`/tickets/${ticket.id}`}>{ticket.description}</Link>.   That's the first step to setting up the dynamic routing explained at the bottom of  applicationViews.js
