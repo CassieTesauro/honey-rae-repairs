@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom" //import Link function from the react-router-dom library so we can use the Link component in our code.  
-
+import './NavBar.css'
 
 
 export const NavBar = () => {
